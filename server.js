@@ -270,6 +270,6 @@ const getGasPrice = async () => {
             }
         }
     }
-    await delay(1000);
+    await delay(1000 * 12);
     getGasPrice()
 }
