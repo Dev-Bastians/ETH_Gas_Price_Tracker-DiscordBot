@@ -15,7 +15,7 @@ const save = (obj) => {
 };
 
 let web3 = new Web3(
-    "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
+    `https://mainnet.infura.io/v3/${process.env.INFURA_ID}`
 );
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] }); // discord.js handler
