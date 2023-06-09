@@ -221,17 +221,17 @@ const getGasPrice = async () => {
                         fields: [
                           {
                             name: `**Slow** 🐢 (~10min)`,
-                            value: `${price.low} Gwei (US$ ${(ethPrice * price.low * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.low * 72000).toFixed(2)}`,
+                            value: `${price.low} Gwei (US$ ${(ethPrice * price.low * 20000).toFixed(2)})\nOpenSea: $${(ethPrice * price.low * 72000).toFixed(2)}`,
                             inline: true,
                           },
                           {
                             name: `**Average** 🚶‍♂️ (~3min)`,
-                            value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.avg * 72000).toFixed(2)}`,
+                            value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg * 20000).toFixed(2)})\nOpenSea: $${(ethPrice * price.avg * 72000).toFixed(2)}`,
                             inline: true,
                           },
                           {
                             name: `**Fast** ⚡ (~30sec)`,
-                            value: `${price.high} Gwei (US$ ${(ethPrice * price.high * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.high * 72000).toFixed(2)}`,
+                            value: `${price.high} Gwei (US$ ${(ethPrice * price.high * 20000).toFixed(2)})\nOpenSea: $${(ethPrice * price.high * 72000).toFixed(2)}`,
                             inline: true,
                           },
                         ]
@@ -250,17 +250,17 @@ const getGasPrice = async () => {
                         fields: [
                           {
                             name: `**Slow** 🐢 (~10min)`,
-                            value: `${price.low} Gwei (US$ ${(ethPrice * price.low * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.low * 72000).toFixed(2)}`,
+                            value: `${price.low} Gwei (US$ ${(ethPrice * price.low * 20000).toFixed(2)})\nOpenSea: $${(ethPrice * price.low * 72000).toFixed(2)}`,
                             inline: false,
                           },
                           {
                             name: `**Average** 🚶‍♂️ (~3min)`,
-                            value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.avg * 72000).toFixed(2)}`,
+                            value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg * 20000).toFixed(2)})\nOpenSea: $${(ethPrice * price.avg * 72000).toFixed(2)}`,
                             inline: false,
                           },
                           {
                             name: `**Fast** ⚡ (~30sec)`,
-                            value: `${price.high} Gwei (US$ ${(ethPrice * price.high * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.high * 72000).toFixed(2)}`,
+                            value: `${price.high} Gwei (US$ ${(ethPrice * price.high * 20000).toFixed(2)})\nOpenSea: $${(ethPrice * price.high * 72000).toFixed(2)}`,
                             inline: false,
                           },
                         ]
