@@ -201,11 +201,11 @@ const getGasPrice = async () => {
             }
         ],'0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D')
 
-        let ethPrice = (await router.methods.getAmountsOut(1000000000, [
+        let ethPrice = (await router.methods.getAmountsOut(1e9, [
             "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
             "0x6b175474e89094c44da98b954eedeac495271d0f",
         ]).call())[1];
-        ethPrice = parseInt(ethPrice) / 1000000000 / 1000000;
+        ethPrice = parseInt(ethPrice) / 1e18;
         
         for(const key in data) {
             if(price.low > data[key]) continue;
@@ -219,21 +219,21 @@ const getGasPrice = async () => {
                         color: 0x800080,
                         title: "⛽Gas Price",
                         fields: [
-                            {
+                          {
                             name: `**Slow** 🐢 (~10min)`,
-                            value: `${price.low} Gwei (US$ ${(ethPrice * price.low).toFixed(2)})`,
+                            value: `${price.low} Gwei (US$ ${(ethPrice * price.low * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.low * 72000).toFixed(2)}`,
                             inline: true,
-                            },
-                            {
+                          },
+                          {
                             name: `**Average** 🚶‍♂️ (~3min)`,
-                            value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg).toFixed(2)})`,
+                            value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.avg * 72000).toFixed(2)}`,
                             inline: true,
-                            },
-                            {
+                          },
+                          {
                             name: `**Fast** ⚡ (~30sec)`,
-                            value: `${price.high} Gwei (US$ ${(ethPrice * price.high).toFixed(2)})`,
+                            value: `${price.high} Gwei (US$ ${(ethPrice * price.high * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.high * 72000).toFixed(2)}`,
                             inline: true,
-                            },
+                          },
                         ]
                     },
                     ],
@@ -248,21 +248,21 @@ const getGasPrice = async () => {
                         color: 0x800080,
                         title: "⛽Gas Price",
                         fields: [
-                            {
-                                name: `**Slow** 🐢 (~10min)`,
-                                value: `${price.low} Gwei (US$ ${(ethPrice * price.low).toFixed(2)})`,
-                                inline: false,
-                            },
-                            {
-                                name: `**Average** 🚶‍♂️ (~3min)`,
-                                value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg).toFixed(2)})`,
-                                inline: false,
-                            },
-                            {
-                                name: `**Fast** ⚡ (~30sec)`,
-                                value: `${price.high} Gwei (US$ ${(ethPrice * price.high).toFixed(2)})`,
-                                inline: false,
-                            },
+                          {
+                            name: `**Slow** 🐢 (~10min)`,
+                            value: `${price.low} Gwei (US$ ${(ethPrice * price.low * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.low * 72000).toFixed(2)}`,
+                            inline: false,
+                          },
+                          {
+                            name: `**Average** 🚶‍♂️ (~3min)`,
+                            value: `${price.avg} Gwei (US$ ${(ethPrice * price.avg * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.avg * 72000).toFixed(2)}`,
+                            inline: false,
+                          },
+                          {
+                            name: `**Fast** ⚡ (~30sec)`,
+                            value: `${price.high} Gwei (US$ ${(ethPrice * price.high * 20000).toFixed(2)})\nOpenSea: ${(ethPrice * price.high * 72000).toFixed(2)}`,
+                            inline: false,
+                          },
                         ]
                         },
                     ],
@@ -270,6 +270,6 @@ const getGasPrice = async () => {
             }
         }
     }
-    await delay(1000 * 12);
+    await delay(1000 * 6);
     getGasPrice()
 }
