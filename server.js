@@ -239,6 +239,7 @@ const getGasPrice = async () => {
                     ],
                 })
             } else {
+              try {
                 const member = await client.users.fetch(key);
                 member.send({
                     content: "",
@@ -267,6 +268,9 @@ const getGasPrice = async () => {
                         },
                     ],
                 })
+              } catch (e) {
+                console.log(e);
+              }
             }
         }
     }
